@@ -277,8 +277,8 @@ nav bar ends
     grid-template-areas: 
     'home home  home home' 
     'services services services services'
-    'about about about about'
     'works works works works'
+    'about about about about'
     'contact contact contact contact'
     'footer footer footer footer'
     ;
@@ -360,7 +360,6 @@ nav bar ends
 .works{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
     grid-template-areas: 
     'web web web'
     'phone phone phone'
@@ -375,7 +374,7 @@ nav bar ends
     .works{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+
     grid-template-areas: 
     'web phone'
     'app consult'
@@ -388,11 +387,10 @@ nav bar ends
     .services,
     .works{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-areas: 
-    'web phone '
-    'app consult'
+    'web phone app '
+    'consult . .'
     ;
 }
 }
@@ -422,20 +420,18 @@ nav bar ends
     gap: 10px;
     grid-template-areas: 
     'personal'
-    'orther-options'
     'about-content'
     ;
 
 }
 /* about for tablet view */
-@media all and (min-width:568px){
+@media all and (min-width:930px){
     .about-me{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
         grid-template-areas: 
-        'personal about-content'
-        'orther-options about-content'
+        'personal about-content '
         ;
     
     }
@@ -443,17 +439,11 @@ nav bar ends
 
 .personal{
     grid-area: personal;
-    background-color: rgb(71, 187, 41);
 }
 
-.orther-options{
-    grid-area:orther-options;
-    background-color: rgb(38, 59, 78);
-}
 
 .about-content{
     grid-area:about-content;
-    background-color: rgb(107, 8, 61);
 }
 
 
@@ -479,13 +469,30 @@ nav bar ends
 @media all and (min-width:568px){
     .contact-me{
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         gap: 10px;
         grid-template-areas: 
-        'some-image send-message send-message'
+        'send-message'
         ;
     }
 
+    .some-image{
+        grid-area: some-image;
+        background-color: rgb(228, 12, 12);
+        display: none;
+    }
+}
+
+
+@media all and (min-width:930px){
+    .contact-me{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        grid-template-areas: 
+        'some-message send-message send-message'
+        ;
+    }
     .some-image{
         grid-area: some-image;
         background-color: rgb(228, 12, 12);
@@ -497,7 +504,6 @@ nav bar ends
 
 .send-message{
     grid-area: send-message;
-    background-color: rgb(26, 10, 167);
 }
 
 
@@ -515,7 +521,7 @@ nav bar ends
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    width: 85%;
+    width: 75%;
     margin: 0 auto;
     padding: 10px 0;
     border-radius: 15px;
@@ -529,7 +535,7 @@ span{
 
 
 .personal-image{
-    height: 400px;
+    height: 300px;
     background: url(./images/michael.JPG);
     background-position: center;
     background-repeat: no-repeat;
@@ -553,22 +559,12 @@ h3{
     margin-top: 5px;
 }
 
-.sub{
-    /* background-color: red; */
-}
 
-
-.web,
-.app,
-.phone,
-.consult{
-    /* background-color: #bbbbbb28; */
-}
 
 img{
     display: block;
     width: 35%;
-    height: 120px;
+    height: 80px;
     align-self: center;
     border-radius:30% 70% 66% 34% / 43% 40% 60% 57%;
 }
@@ -584,11 +580,11 @@ button{
     padding: 5px 0;
 }
 
-.web-img,
+/* .web-img,
 .phone-img,
 .app-img{
     height: 270px;
-}
+} */
 
 
 
@@ -614,4 +610,59 @@ span,
 .contents-para{
     font-size: 1.1rem;
     font-weight: 400;
+}
+
+/* styling contact me */
+.lets-talk{
+    margin: 20px 0;
+}
+
+.label{
+    /* display: block; */
+}
+
+.input,
+textarea{
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+textarea{
+    text-align: left;
+    padding: 5px;
+}
+
+.input{
+    height: 40px; 
+}
+
+.send{
+    width: 30%;
+    height: 40px;
+}
+
+/* styling about me */
+
+.about-me ul li{
+    display: block;
+    list-style: none;
+    display: inline-block;
+    background-color: #bbb;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    margin: 5px;
+    line-height: 50px;
+    border-radius: 12px;
+}
+
+.about-me .personal ul li{
+    display: block;
+    text-align: left;
+    width: 400px;
+    margin:0;
+    background-color: transparent;
 }
