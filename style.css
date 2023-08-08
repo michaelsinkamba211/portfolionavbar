@@ -110,6 +110,7 @@ a{
  .checks:checked ~ .main-header-nav-ul-mobile{
     display: flex;
     height: 90vh;
+    background: #fff;
 }
 .checks:checked ~ .menu-bars{
     background: transparent;
@@ -184,6 +185,7 @@ a{
     .main-header-nav-ul-tablet{
         display: none;
         height: 90vh;
+        background: #fff;
     }
 
     .checks:checked  ~ .main-header-nav-ul-tablet{
