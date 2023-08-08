@@ -11,20 +11,26 @@ body{
 }
 
 .main{
-    max-width: 1100px;
-    width: 90%;
+    max-width: 960px;
     min-width: 290px;
     margin: 0 auto;
-    background: #bbbbbb65;
     height: 100vh;
 }
 
+.main-body{
+    margin-left:30px;
+}
+
 .main-header{
-    max-width: 1100px;
-    width: 90%;
-    height: 10vh;
-    background: rgba(235, 233, 233, 0.361);
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 15px;
+    height: 15vh;
+    background: #fff;
+    /* background: #F8F8F8 0% 0% no-repeat padding-box; */
     position: fixed;
+    border-radius: 12px;
 }
 
 .main-header-nav{
@@ -66,44 +72,44 @@ body{
 
 a{
     text-decoration: none;
+    color: #717171;
 }
 
 
 .log{
-    text-decoration: underline;
     display: block;
     padding: 0px 20px;
+    padding-top: 5px;
     line-height: 10vh;
     width: fit-content;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #143774;
+    font: normal normal normal 33px/42px Lora;
 }
 
-.log:hover{
-    background-color: antiquewhite;
-}
 
 .main-header-nav-ul-mobile .item{
     line-height: 10vh;
-    padding: 0px 20px;
+    padding: 0px 10px;
 }
 
 .main-header-nav-ul-mobile .item:hover{
     background-color: #bbb;
+    border-radius: 12px;
 }
 
 
 .main-header-nav-ul-mobile{
-    background-color: aquamarine;
     display: none;
     flex-direction: column;
     text-align: center;
 }
 
-
+                                                                                                                                                                   
 
  .checks:checked ~ .main-header-nav-ul-mobile{
     display: flex;
     height: 90vh;
-    /* overflow: hidden; */
 }
 .checks:checked ~ .menu-bars{
     background: transparent;
@@ -126,7 +132,7 @@ a{
 .options{
     display:grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 5px;
     margin: 40px auto;
 }
 
@@ -140,6 +146,7 @@ a{
     height: 8vh;
     background-color: #bbb;
     place-content: center;
+    font-size: .9rem;
 }
     .second{
         display: none;
@@ -236,7 +243,7 @@ a{
         display: flex;
         position: absolute;
         top: 0; 
-        right: 320px;
+        right: 280px;
     }
     .main-header-nav-ul-tablet li{
         display: inline-block;
@@ -266,7 +273,6 @@ nav bar ends
 */
 
 
-
 .main-body{
     background: #fff;
     padding-top: 10vh;
@@ -290,12 +296,13 @@ nav bar ends
 .about-me,
 .contact-me{
     width: 90%;
-    margin: 0 auto;
+    /* margin:0 auto; */
 }
+
 
 .home{
     grid-area: home;
-
+    
 }
 
 .services{
@@ -316,38 +323,44 @@ nav bar ends
 
 .footer{
     grid-area: footer;
-    background: rgba(235, 233, 233, 0.361);
+    height: 172px;
+    background: #143774 0% 0% no-repeat padding-box;
+}
+
+.footer-last{
+    position: fixed;
+    background-color: red;
+    width: 100%;
+    height: 200px;
+    z-index: 1;
 }
 
 /* home */
 .home{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    grid-template-areas: 
-    'personal-image personal-image'
-    'home-content home-content'
-    ;
+    display: flex;
+    justify-content: center;
+    height: 500px;
 }
 
-
+.download{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.download  a{
+    display: block;
+    width: 150px;
+    height: 55px;
+    margin-top: 25px;
+   line-height: 45px;
+}
+@media screen and (min-width:568px){
+    .download {
+        display: none;
+    }
+}
 /* tablet and more */
-@media all and (min-width:568px){
-.home{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    grid-template-areas: 
-    'personal-image  home-content'
-    ;
-}
 
-}
-
-
-.home-content{
-    grid-area: home-content;
-}
 
 .personal-image{
     grid-area: personal-image;
@@ -356,8 +369,7 @@ nav bar ends
 
 /* services default */
 
-.services,
-.works{
+.services{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: 
@@ -370,8 +382,7 @@ nav bar ends
 
 /* services for tablet view */
 @media all and (min-width:568px){
-    .services,
-    .works{
+    .services{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
@@ -384,8 +395,7 @@ nav bar ends
 /* services for computer view */
 
 @media all and (min-width:938px){
-    .services,
-    .works{
+    .services{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: 
@@ -463,7 +473,6 @@ nav bar ends
 .some-image{
     display: none;
     grid-area: some-image;
-    background-color: rgb(228, 12, 12);
 }
 
 @media all and (min-width:568px){
@@ -477,8 +486,8 @@ nav bar ends
     }
 
     .some-image{
+        display: none;
         grid-area: some-image;
-        background-color: rgb(228, 12, 12);
         display: none;
     }
 }
@@ -490,12 +499,11 @@ nav bar ends
         grid-template-columns: repeat(3, 1fr);
         gap: 10px;
         grid-template-areas: 
-        'some-message send-message send-message'
+        'some-image send-message send-message'
         ;
     }
     .some-image{
         grid-area: some-image;
-        background-color: rgb(228, 12, 12);
         display: flex;
     }
 }
@@ -521,7 +529,7 @@ nav bar ends
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    width: 75%;
+    width: 70%;
     margin: 0 auto;
     padding: 10px 0;
     border-radius: 15px;
@@ -561,10 +569,10 @@ h3{
 
 
 
-img{
+.services img{
     display: block;
-    width: 35%;
-    height: 80px;
+    width: 40%;
+    height: 95px;
     align-self: center;
     border-radius:30% 70% 66% 34% / 43% 40% 60% 57%;
 }
@@ -580,11 +588,7 @@ button{
     padding: 5px 0;
 }
 
-/* .web-img,
-.phone-img,
-.app-img{
-    height: 270px;
-} */
+
 
 
 
@@ -617,9 +621,7 @@ span,
     margin: 20px 0;
 }
 
-.label{
-    /* display: block; */
-}
+
 
 .input,
 textarea{
@@ -665,4 +667,56 @@ textarea{
     width: 400px;
     margin:0;
     background-color: transparent;
+}
+
+.contact-me .some-image .fa-brands{
+    display: block;
+    color: #bbb;
+    font-size: 15rem;
+    align-self: center;
+    padding-right:20px ;
+}
+
+/* styling works */
+
+.web-works ul,
+.app-works ul,
+.phone-works ul{  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width:568px){
+    .web-works ul,
+    .app-works ul,
+    .phone-works ul{  
+    display: block;
+}
+
+}
+
+
+
+.works ul li{
+    list-style: none;
+    display: inline-block;
+    width: 170px;
+    height: fit-content;
+    text-align: center;
+    margin:  25px 20px;
+    border-radius: 12px;
+}
+.works ul li p{
+    padding: 0;
+    margin: 0;
+}
+
+.works ul li img{
+    display: block;
+    width: 150px;
+    height: 160px;
+    border-radius:12px ;
+    align-self: center;
 }
