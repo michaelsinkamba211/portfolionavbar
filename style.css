@@ -722,3 +722,7 @@ textarea{
     border-radius:12px ;
     align-self: center;
 }
+
+.footer{
+    margin-left: 0;
+}
